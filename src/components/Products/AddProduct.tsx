@@ -53,9 +53,6 @@ const AddProduct: React.FC<AddProductProps> = () => {
       dispatch(createProduct(formData))
         .then((result:any) => {
           if (createProduct.fulfilled.match(result)) {
-            console.log(result);
-            
-            // setResponse(result.payload.msg);
             Navigate("/Products");
             setIsSubmitting(false);
             product.resetForm();
