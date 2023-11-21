@@ -221,7 +221,7 @@ const EditUser: React.FC = () => {
           color="primary"
           variant="contained"
         >
-          Update Product
+          Update User
         </Button>
       </form>
     </div>
