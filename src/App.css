@@ -28,6 +28,18 @@
   color: #61dafb;
 }
 
+.radius_icon {
+  width: 36px !important;
+  height: 36px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #191C24;
+  border-radius: 50px;
+  color: #fff;
+  padding: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
