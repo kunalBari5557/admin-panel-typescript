@@ -130,7 +130,12 @@ export default function Sidenav() {
           <Divider />
           <List sx={{ marginTop: "4rem" }}>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton
+                style={{
+                  backgroundColor:
+                    location.pathname === "/Users" ? "black" : "transparent",
+                }}
+              >
                 <Tooltip title="Users" arrow placement="right">
                   <ListItemIcon>
                     <Link to="/Users">
@@ -138,10 +143,12 @@ export default function Sidenav() {
                     </Link>
                   </ListItemIcon>
                 </Tooltip>
-
                 <Link
                   to="/Users"
-                  style={{ color: "black", textDecoration: "none" }}
+                  style={{
+                    color: location.pathname === "/Users" ? "white" : "black",
+                    textDecoration: "none",
+                  }}
                 >
                   Users
                 </Link>
@@ -149,7 +156,14 @@ export default function Sidenav() {
             </ListItem>
 
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton
+                style={{
+                  backgroundColor:
+                    location.pathname === "/Products"
+                      ? "black"
+                      : "transparent",
+                }}
+              >
                 <Tooltip title="Products" arrow placement="right">
                   <ListItemIcon>
                     <Link to="/Products">
@@ -159,7 +173,11 @@ export default function Sidenav() {
                 </Tooltip>
                 <Link
                   to="/Products"
-                  style={{ color: "black", textDecoration: "none" }}
+                  style={{
+                    color:
+                      location.pathname === "/Products" ? "white" : "black",
+                    textDecoration: "none",
+                  }}
                 >
                   Products
                 </Link>
