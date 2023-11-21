@@ -26,6 +26,7 @@ import { AiFillHome, AiFillVideoCamera } from "react-icons/ai";
 import AddUser from "./components/Users/AddUser";
 import ViewUserDetails from "./components/Users/ViewUserDetails";
 import EditUser from "./components/Users/EditUser";
+import Tooltip from "@mui/material/Tooltip";
 
 const drawerWidth = 240;
 
@@ -79,9 +80,18 @@ const Drawer = styled(MuiDrawer, {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme),
   }),
+  // ...(!open && {
+  //   ...closedMixin(theme),
+  //   "& .MuiDrawer-paper": closedMixin(theme),
+  // }),
   ...(!open && {
     ...closedMixin(theme),
     "& .MuiDrawer-paper": closedMixin(theme),
+    "& .responsive-text": {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
   }),
 }));
 
@@ -119,13 +129,16 @@ export default function Sidenav() {
         <Drawer variant="permanent" open={open}>
           <Divider />
           <List sx={{ marginTop: "4rem" }}>
-          <ListItem disablePadding>
+            <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <Link to="/Users">
-                    <AiFillVideoCamera className="radius_icon" />
-                  </Link>
-                </ListItemIcon>
+                <Tooltip title="Users" arrow placement="right">
+                  <ListItemIcon>
+                    <Link to="/Users">
+                      <AiFillVideoCamera className="radius_icon" />
+                    </Link>
+                  </ListItemIcon>
+                </Tooltip>
+
                 <Link
                   to="/Users"
                   style={{ color: "black", textDecoration: "none" }}
@@ -134,13 +147,16 @@ export default function Sidenav() {
                 </Link>
               </ListItemButton>
             </ListItem>
+
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <Link to="/Products">
-                    <AiFillHome className="radius_icon" />
-                  </Link>
-                </ListItemIcon>
+                <Tooltip title="Products" arrow placement="right">
+                  <ListItemIcon>
+                    <Link to="/Products">
+                      <AiFillHome className="radius_icon" />
+                    </Link>
+                  </ListItemIcon>
+                </Tooltip>
                 <Link
                   to="/Products"
                   style={{ color: "black", textDecoration: "none" }}
@@ -148,7 +164,7 @@ export default function Sidenav() {
                   Products
                 </Link>
               </ListItemButton>
-            </ListItem>            
+            </ListItem>
           </List>
           <Divider />
         </Drawer>
