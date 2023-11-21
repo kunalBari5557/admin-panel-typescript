@@ -11,7 +11,7 @@ export const AdminLoginSchema = Yup.object({
 // });
 
 export const ProductSchema = Yup.object({
-    title: Yup.string().max(10,"Title must not be greater than 10 characters."),
+    title: Yup.string().max(10,"Title must not be greater than 10 characters.").required("Title field is required."),
     price: Yup.string().max(10,"Price must not be greater than 10 characters.").required("Price field is required."),
     description: Yup.string().max(255,"Title must not be greater than 255 characters.").required("Description field is required."),
     category: Yup.string().max(255,"Title must not be greater than 255 characters.").required("Category field is required."),
