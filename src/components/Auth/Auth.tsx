@@ -59,7 +59,7 @@ const SignUp: React.FC<SignUpProps> = () => {
         const { token } = actionResult.payload;
         if (token) {
           localStorage.setItem('Token', token);
-          Navigate('/Products');
+          Navigate('/User');
           toast.dismiss();
           toast.success('Welcome to the dashboard');
         }
