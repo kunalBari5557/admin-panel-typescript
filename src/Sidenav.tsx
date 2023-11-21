@@ -14,7 +14,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 // import { AiFillHome, AiFillVideoCamera } from "react-icons/ai";
-import Shorts from "./components/Shorts";
+import Users from "./components/Users/Users";
 import { Link, Route, Routes, useLocation, Navigate } from "react-router-dom";
 import SignUp from "./components/Auth/Auth";
 import LogoutButton from "./components/LogoutButton/LogoutButton";
@@ -23,6 +23,9 @@ import EditProducts from "./components/Products/EditProducts";
 import ViewProductDetails from "./components/Products/ViewProductDetails";
 import AddProduct from "./components/Products/AddProduct";
 import { AiFillHome, AiFillVideoCamera } from "react-icons/ai";
+import AddUser from "./components/Users/AddUser";
+import ViewUserDetails from "./components/Users/ViewUserDetails";
+import EditUser from "./components/Users/EditUser";
 
 const drawerWidth = 240;
 
@@ -116,6 +119,21 @@ export default function Sidenav() {
         <Drawer variant="permanent" open={open}>
           <Divider />
           <List sx={{ marginTop: "4rem" }}>
+          <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <Link to="/Users">
+                    <AiFillVideoCamera className="radius_icon" />
+                  </Link>
+                </ListItemIcon>
+                <Link
+                  to="/Users"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
+                  Users
+                </Link>
+              </ListItemButton>
+            </ListItem>
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -130,22 +148,7 @@ export default function Sidenav() {
                   Products
                 </Link>
               </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <Link to="/Shorts">
-                    <AiFillVideoCamera className="radius_icon" />
-                  </Link>
-                </ListItemIcon>
-                <Link
-                  to="/Shorts"
-                  style={{ color: "black", textDecoration: "none" }}
-                >
-                  Shorts
-                </Link>
-              </ListItemButton>
-            </ListItem>
+            </ListItem>            
           </List>
           <Divider />
         </Drawer>
@@ -163,7 +166,10 @@ export default function Sidenav() {
               <Route path="products/add" element={<AddProduct />} />
               <Route path="products/edit" element={<EditProducts />} />
               <Route path="products/details" element={<ViewProductDetails />} />
-              <Route path="/Shorts" element={<Shorts />} />
+              <Route path="/Users" element={<Users />} />
+              <Route path="users/add" element={<AddUser />} />
+              <Route path="users/details" element={<ViewUserDetails />} />
+              <Route path="users/edit" element={<EditUser />} />
               <Route path="*" element={<Navigate to="/Products" />} />{" "}
             </>
           )}
