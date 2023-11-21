@@ -1,7 +1,6 @@
-import axios from "axios";
 import { useFormik } from "formik";
-import React, { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updateProductById } from "../../redux/features/Products/Products";

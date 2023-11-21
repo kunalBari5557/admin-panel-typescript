@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk, PayloadAction, Action } from '@reduxjs/toolkit';
-import axios, { AxiosError } from 'axios';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 interface Product {
   id: number;

@@ -1,14 +1,12 @@
-import axios from "axios";
 import { useFormik } from "formik";
-import React, { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import {useNavigate } from "react-router-dom";
 import { ProductSchema } from "../../ValidationSchema";
 import { createProduct } from "../../redux/features/Products/Products";
 import { useDispatch } from "react-redux";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { Alert, AlertTitle, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 
 interface AddProductProps {}
 
