@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -12,11 +12,17 @@ import { useLocation } from "react-router-dom";
 const ViewUserDetails = () => {
   const location = useLocation();
   const stateData = location.state;
-  console.log("stateData",stateData);
-  
+  console.log("stateData", stateData);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const maskedPassword = "*".repeat(stateData?.password.length);
 
   return (
-    <TableContainer style={{marginTop:"5rem"}} component={Paper}>
+    <TableContainer style={{ marginTop: "5rem" }} component={Paper}>
       <Table>
         <TableBody>
           <TableRow>
@@ -36,11 +42,17 @@ const ViewUserDetails = () => {
               <strong>Username</strong>
             </TableCell>
             <TableCell>{stateData?.username}</TableCell>
-          </TableRow> <TableRow>
+          </TableRow>{" "}
+          <TableRow>
             <TableCell>
               <strong>Password</strong>
             </TableCell>
-            <TableCell>{stateData?.password}</TableCell>
+            <TableCell>
+              {showPassword ? stateData.password : maskedPassword}
+              <button style={{marginLeft:"2rem"}} onClick={togglePasswordVisibility}>
+                {showPassword ? "Hide Password" : "Show Password"}
+              </button>
+            </TableCell>
           </TableRow>
         </TableBody>
       </Table>
