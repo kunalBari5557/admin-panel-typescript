@@ -170,7 +170,7 @@ export default function Sidenav() {
               <Route path="users/add" element={<AddUser />} />
               <Route path="users/details" element={<ViewUserDetails />} />
               <Route path="users/edit" element={<EditUser />} />
-              <Route path="*" element={<Navigate to="/Products" />} />{" "}
+              <Route path="*" element={<Navigate to="/Users" />} />{" "}
             </>
           )}
         </Routes>
